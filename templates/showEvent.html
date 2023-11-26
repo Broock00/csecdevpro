@@ -1,0 +1,51 @@
+{% extends 'base.html'%}
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+{% block context %}
+    <style>
+        body {
+            background-color: #132434;
+            color: white;
+        }
+        .image-right {
+            float: right;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>{{Event.Event_name}}</h1>
+        {%if Event.Image %}
+        <img src="{{Event.Image.url}}" class="image-right" alt="Image">
+        {%endif%}
+        <p>
+            This is some text. If the text is too large, it will wrap around the image in an 'L' shape.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc at bibendum tincidunt, erat nisl aliquet ligula, nec congue neque risus a lorem.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc at bibendum tincidunt, erat nisl aliquet ligula, nec congue neque risus a lorem.
+            This is some text. If the text is too large, it will wrap around the image in an 'L' shape.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc at bibendum tincidunt, erat nisl aliquet ligula, nec congue neque risus a lorem.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc at bibendum tincidunt, erat nisl aliquet ligula, nec congue neque risus a lorem.
+            This is some text. If the text is too large, it will wrap around the image in an 'L' shape.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc at bibendum tincidunt, erat nisl aliquet ligula, nec congue neque risus a lorem.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc at bibendum tincidunt, erat nisl aliquet ligula, nec congue neque risus a lorem.
+        {{Event.Description}}
+        <li>Event Type: {{Event.Event_type}}</li>
+        <li>Date and Time: {{Event.Date_and_Time}}</li>
+        <li>Location: {{Event.Location}}</li>
+        <li>Organizer: {{Event.Organizer}}</li>
+        <li>Limited Capacity: {{Event.Capacity}}</li>
+        
+        </p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+{%endblock%}

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet"  type="text/css" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <div class="login-form">
+    {% if messages %}
+        {% for message in messages%}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" >
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+        {% endfor %}
+    {% endif %}
+        <div class="text">
+            <i><b>CSEC ASTU</b></i>
+        </div>
+        <form method="post">
+            {%csrf_token%}
+            <div class="field">
+                <div class="fas fa-envelope"></div>
+                <input type="text" placeholder="Username" name = "Username">
+            </div>
+            <div class="field">
+                <div class="fas fa-lock"></div>
+                <input type="password" placeholder="Password" name = "password">
+            </div>
+            <button>LOGIN</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{%extends 'base.html'%}
+
+
+{%block context%}
+{% load static %}
+<head>
+    <style>
+        .Event_name, .Event_type, .Description, .Date_and_Time, .Location,
+        .Organizer, .Capacity{
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+    <link rel="stylesheet"  type="text/css" href="{% static 'Event.css' %}">
+    
+</head>
+    {% comment %} <formss method='post'>
+        {% csrf_token %}
+        {{formsss.as_p}}
+    </formss> {% endcomment %}
+
+    <div class="container mt-1">
+        <div class="card bg-dark text-light">
+            <div class="card-body">
+                <h5 class="card-title text-center"><i>Add Events</i></h5>
+                
+                <form method="post" enctype="multipart/forms-data">
+                    {% csrf_token %}
+                    
+                    <div class="forms-row">
+                        <div class="forms-group col-md-3">
+                            {{ forms.Event_name.label_tag }}
+                            {{ forms.Event_name }}
+                        </div>
+                        
+                        <div class="form-group col-md-2">
+                            {{ forms.Event_type.label_tag }}
+                            {{ forms.Event_type }}
+                        </div>
+
+                        <div class="forms-group col-md-1">
+                            {{ forms.Description.label_tag }}
+                            {{ forms.Description }}
+                        </div>
+                    </div>
+                    
+                    
+                        <div class="forms-group col-md-3">
+                            {{ forms.Date_and_Time.label_tag }}
+                            {{ forms.Date_and_Time }}
+                        </div>
+                        
+                        <div class="forms-group col-md-3">
+                            {{ forms.Location.label_tag }}
+                            {{ forms.Location }}
+                        </div>
+                    
+                    
+                    
+                        <div class="forms-group col-md-3">
+                            {{ forms.Organizer.label_tag }}
+                            {{ forms.Organizer }}
+                        </div>
+                        
+                        <div class="forms-group col-md-3">
+                            {{ forms.Capacity.label_tag }}
+                            {{ forms.Capacity }}
+                        </div>
+                    
+    
+                    
+                        <div class="forms-group col-md-6">
+                            {{ forms.Image.label_tag }}
+                            {{ forms.Image }}
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+        
+
+    
+    
+    
+{%endblock%}
+
+
+{% comment %} Event_name, Event_type,Image, Description, Date_and_Time, Location, Organizer, Capacity {% endcomment %}

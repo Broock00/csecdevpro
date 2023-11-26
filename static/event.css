@@ -1,0 +1,17 @@
+.form-group {
+    text-align: center;
+}
+
+.form-control, .form-control-file {
+    display: inline-block;
+    width: 50%;
+}
+
+.form-control-file {
+    margin-left: 25%;
+}
+
+body {
+    background-color: #132434;
+    color: white;
+}

@@ -1,0 +1,72 @@
+{% extends 'base.html'%}
+{% block context %}
+{% load static %}
+
+<head>
+    <link rel="stylesheet"  type="text/css" href="{% static 'home.css' %}">
+    <style>
+        .School-terms{
+            color:white;
+        }
+        .delete-icon:hover {
+        color: red; 
+        }
+
+        .delete-icon {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    {%if user.is_authenticated%}
+    <div class="hero">
+        <h1>Welcome {{user}} to <b>CSEC ASTU</b></h1>
+    </div>
+    <div class="container mt-5">
+        <p class="text3D"><i>latest Events</i></p>
+        <div class="row">
+            
+            {% if Events %}
+                {%for Event in Events%}
+                    <div class="col-md-4">
+                        <div class="card m-2 position-relative">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ Event.Event_name }}</h5>
+                                <p class="card-text">{{ Event.Description }}</p>
+                                <a href="{% url 'Read_more' Event.pk %}" class="btn btn-primary">Read More</a>
+                                
+                                {% if user.is_superuser %}
+                                    <a class="btn btn-outline-dark btn-sm m-1 delete-icon" href="{% url 'delete_Event' Event.pk %}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                                        </svg>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                {%endfor%}
+            {%else%}
+                <h1 >NO EVENTS YET..</h1>
+            {%endif%}
+            
+            
+        </div>
+    </div>
+    {%else%}
+    <div class="hero">
+        <h1>Welcome to <b>CSEC ASTU</b></h1>
+    </div>
+    
+    {%endif%}
+    {%endblock%}
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
