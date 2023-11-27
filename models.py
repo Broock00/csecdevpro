@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
+from django.utils import timezone
 
 
 
@@ -12,11 +13,12 @@ class Event(models.Model):
     ]
     Event_name = models.CharField(max_length=100)
     Event_type = models.CharField(max_length=50, choices=EVENT_TYPES,default='-------')
-    Description = models.CharField(blank = True,max_length=100000)
+    Description = models.TextField(blank = True,max_length=100000)
     Date_and_Time= models.CharField(max_length=100) 
     Location = models.CharField(max_length=100)
     Organizer = models.CharField(blank = True,max_length=100)
     Capacity = models.PositiveIntegerField()
+    DateTime = models.DateTimeField(default=timezone.now)
     Image = models.ImageField(upload_to = "staticfiles/media/")
 
     def __str__(self):

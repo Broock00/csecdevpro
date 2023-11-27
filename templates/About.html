@@ -1,13 +1,23 @@
-{%extends 'base.html'%}
+{% extends 'base.html' %}
+{% block context %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% comment %} <link rel="stylesheet" href="styles.css"> {% endcomment %}
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #132434;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+    </style>
 </head>
-{%block context%}
+
 <body>
 
     <header>
@@ -47,8 +57,7 @@ be a part of our journey, and let's shape the future together.
 </p>
         </div>
     </section>
+</body>
+{% endblock %}
 
-</body>
-{%endblock%}
-</body>
 </html>

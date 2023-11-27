@@ -59,7 +59,7 @@ body {
     padding: 20px 0;
     text-align: center;
     position: relative;
-    margin-top: 50px; /* Added margin to separate advertisement from content */
+    margin-top: 50px;
 }
 
 .advertisement-content {
@@ -74,14 +74,7 @@ body {
     margin-bottom: 20px;
 }
 
-.footer {
-    background-color: #132434;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    margin-top: 50px; /* Added margin to separate footer from content */
-}
+
 .hero {
     height: 50vh;
     background-color: #132434;
@@ -97,10 +90,10 @@ body {
 }
 
 .cse-dev-text {
-    color: white; /* Change the text color to white */
-    font-size: 20px; /* Increase the font size */
-    font-weight: bold; /* Make the text bold */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow */
+    color: white;
+    font-size: 20px; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .text3D {

@@ -32,7 +32,7 @@
         {% csrf_token %}
 
         <div class="container">
-
+            
             <div class="box">
                 <label for="forms.password1.id_for_label" class="fl fontLabel"> Username: </label>
                 <div class="new iconBox">
@@ -175,12 +175,21 @@
                     {% endfor %}
                 </select>
             </div>
-
+                <div>
+                    <h3> Tick (∜) Right for Admin for Both</h3>
+                </div>
             <!---is staff------>
             <div class="box checkbox">
                 <label for="{{ forms.is_staff.id_for_label }}" class="fl fontLabel"> is staff: </label>
-                <input type="checkbox" name="Terms" required>
+                {{forms.is_staff}}
             </div>
+            <!---is staff------>
+            <!---is_superuser------>
+            <div class="box checkbox">
+                <label for="{{ forms.is_superuser.id_for_label }}" class="fl fontLabel"> is Admin: </label>
+                {{forms.is_superuser}}
+            </div>
+            <!---is_superuser------>
 
             <div class="box" style="background: #3c5d5f">
                 <input type="Submit" name="Submit" class="submit" value="SUBMIT">
