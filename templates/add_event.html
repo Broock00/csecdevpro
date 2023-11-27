@@ -14,10 +14,7 @@
     <link rel="stylesheet"  type="text/css" href="{% static 'Event.css' %}">
     
 </head>
-    {% comment %} <formss method='post'>
-        {% csrf_token %}
-        {{formsss.as_p}}
-    </formss> {% endcomment %}
+
 
     <div class="container mt-1">
         <div class="card bg-dark text-light">
@@ -75,7 +72,7 @@
                         </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    <button type="submit" class="btn btn-primary btn-block">ADD</button>
                 </form>
             </div>
         </div>
@@ -89,4 +86,3 @@
 {%endblock%}
 
 
-{% comment %} Event_name, Event_type,Image, Description, Date_and_Time, Location, Organizer, Capacity {% endcomment %}

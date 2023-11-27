@@ -5,147 +5,144 @@
         width: 200px;
         height: 30px;
     }
-    .btn-div{
-        position:fixed;
+    .btn-div {
+        position: fixed;
         justify-content: flex-end;
     }
-    .login-btn{
+    .login-btn {
         width: 200px;
-        position:relative;
-        left:706px;
-        top:80px;
+        position: relative;
+        left: 706px;
+        top: 80px;
         background: #2d3e3f;
-        
-
     }
-    .login-btn a{
+    .login-btn a {
         color: white;
     }
 </style>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet"  type="text/css" href="{% static 'signup.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
 
-        <form method="post">
-            {%csrf_token%}
-            
+    <form method="post">
+        {% csrf_token %}
+
         <div class="container">
-            
 
             <div class="box">
                 <label for="forms.password1.id_for_label" class="fl fontLabel"> Username: </label>
-                        <div class="new iconBox">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                        </div>
+                <div class="new iconBox">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </div>
 
-                        <div class="fr">
-                            <div class="textBox" name="username" placeholder="Username">
-                                {{forms.username}}
-                                
-                            </div>
-                            
-                        </div>
-                        <div class="clr"></div>
-                        
+                <div class="fr">
+                    <div class="textBox" name="username" placeholder="Username">
+                        {{forms.username}}
+
                     </div>
 
-                <!--First name-->
-                {{ forms.first_name.errors }}
-                <div class="box">
-                    <label for="forms.first_name.id_for_label" class="fl fontLabel"> First Name: </label>
-                        <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
-                        <div class="fr">
+                </div>
+                <div class="clr"></div>
 
-                            {{forms.first_name}}
-                        </div>
+            </div>
 
-                        <div class="clr"></div>
-                    </div>
+            <!--First name-->
+            {{ forms.first_name.errors }}
+            <div class="box">
+                <label for="forms.first_name.id_for_label" class="fl fontLabel"> First Name: </label>
+                <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
+                <div class="fr">
+
+                    {{forms.first_name}}
+                </div>
+
+                <div class="clr"></div>
+            </div>
             <!--First name-->
 
             <!--Second name-->
-                {{ forms.last_name.errors }}
-                <div class="box">
-                    <label for="{{ forms.last_name.id_for_label }}" class="fl fontLabel"> Last Name: </label>
-                    <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
-                    <div class="fr">
+            {{ forms.last_name.errors }}
+            <div class="box">
+                <label for="{{ forms.last_name.id_for_label }}" class="fl fontLabel"> Last Name: </label>
+                <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
+                <div class="fr">
 
-                        {{forms.last_name}}
-                    
-                    </div>
-                    <div class="clr"></div>
+                    {{forms.last_name}}
+
                 </div>
+                <div class="clr"></div>
+            </div>
             <!--Second name-->
 
 
-                    <!---Email---->
-                {{ forms.email.errors }}
-                <div class="box">
-                    <label for="{{ forms.email.id_for_label }}" class="fl fontLabel"> Email: </label>
-                        <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                        <div class="fr">
+            <!---Email---->
+            {{ forms.email.errors }}
+            <div class="box">
+                <label for="{{ forms.email.id_for_label }}" class="fl fontLabel"> Email: </label>
+                <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                <div class="fr">
 
-                        {{forms.email}}
-                    
-                        </div>
-                    <div class="clr"></div>
+                    {{forms.email}}
+
                 </div>
-                <!--Email----->
+                <div class="clr"></div>
+            </div>
+            <!--Email----->
 
             <!---User ID---->
-                {{ forms.user_id.errors }}
-                <div class="box">
-                    <label for="{{ forms.user_id.id_for_label }}" class="fl fontLabel"> ID No: </label>
-                        <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                        <div class="fr">
+            {{ forms.user_id.errors }}
+            <div class="box">
+                <label for="{{ forms.user_id.id_for_label }}" class="fl fontLabel"> ID No: </label>
+                <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                <div class="fr">
 
-                            {{forms.User_ID}}
-                        
-                        </div>
-                        <div class="clr"></div>
+                    {{forms.User_ID}}
+
                 </div>
-                <!--User ID----->
+                <div class="clr"></div>
+            </div>
+            <!--User ID----->
 
-                
-                <!---Phone No.------>
+
+            <!---Phone No.------>
             {{ forms.phone_number.errors }}
             <div class="box">
-            <label for="{{ forms.phone_number.id_for_label }}" class="fl fontLabel"> Phone No.: </label>
+                <label for="{{ forms.phone_number.id_for_label }}" class="fl fontLabel"> Phone No.: </label>
                 <div class="fl iconBox"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
                 <div class="fr">
 
                     {{forms.Phone_number}}
-                
+
                 </div>
                 <div class="clr"></div>
             </div>
-        <!---Phone No.---->
+            <!---Phone No.------>
 
-                <!---Password 1------>
-                {{ forms.password1.errors }}
-                <div class="box">
+            <!---Password 1------>
+            {{ forms.password1.errors }}
+            <div class="box">
                 <label for="{{ forms.password1.id_for_label }}" class="fl fontLabel"> Password: </label>
-                    <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
-                    <div class="fr">
-                        {{forms.password1}}
-                    </div>
-                    <div class="clr"></div>
+                <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+                <div class="fr">
+                    {{forms.password1}}
                 </div>
-                <!---Password 1---->
+                <div class="clr"></div>
+            </div>
+            <!---Password 1---->
 
 
             <!---Confirm Password------>
             {{ forms.password2.errors }}
             <div class="box">
                 <label for="{{ forms.password2.id_for_label }}" class="fl fontLabel"> Conf Password </label>
-                    <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
-                    <div class="fr">
-                        {{forms.password2}}
-                    </div>
+                <div class="fl iconBox"><i class="fa fa-key" aria-hidden="true"></i></div>
+                <div class="fr">
+                    {{forms.password2}}
+                </div>
                 <div class="clr"></div>
             </div>
             <!---Confirm Password------>
@@ -153,47 +150,44 @@
             <!---Department----->
             <div class="box">
                 <label for="{{ forms.Department.id_for_label }}">Dep: </label>
-                    <div class="fr">
-                        <select name="Department" id="{{ forms.Department.auto_id }}">
-                            
-                            {% for value, display in forms.Department.field.choices %}
-                                <option value="{{ value }}"{% if forms.Department.value == value %} selected{% endif %}>
-                                    {{ display }}</option>
-                            {% endfor %}
-                            
-                        </select>
-                    </div>
-                    <div class="clr"></div>
-                </div>
-                <!---Department--->
+                <div class="fr">
+                    <select name="Department" id="{{ forms.Department.auto_id }}">
 
-
-                <!---Gender----->
-                <div class="box radio">
-                    <label for="{{ forms.Gender.id_for_label }}">Gender:</label>
-                    <select name="Gender" id="{{ forms.Gender.auto_id }}">
-                        <option value="none">---</option>
-                        {% for value, display in forms.Gender.field.choices %}
-                            <option value="{{ value }}"{% if forms.gender.value == value %} selected{% endif %}>{{ display }}</option>
+                        {% for value, display in forms.Department.field.choices %}
+                            <option value="{{ value }}"{% if forms.Department.value == value %} selected{% endif %}>
+                                {{ display }}</option>
                         {% endfor %}
+
                     </select>
                 </div>
-                <!---Gender--->
-                <!--Terms and Conditions------>
-                
-                {% comment %} <div class="box terms">
-                    <label for="{{ forms.is_staff.id_for_label }}" class="fl fontLabel"> is staff: </label>
-                        <input type="checkbox" name="Terms" required>
-                </div> {% endcomment %}
+                <div class="clr"></div>
+            </div>
+            <!---Department--->
 
-                <!--Terms and Conditions------>
 
-                    <div class="box" style="background: #3c5d5f">
-                        <input type="Submit" name="Submit" class="submit" value="SUBMIT">
-                </div>
+            <!---Gender----->
+            <div class="box radio">
+                <label for="{{ forms.Gender.id_for_label }}">Gender:</label>
+                <select name="Gender" id="{{ forms.Gender.auto_id }}">
+                    <option value="none">---</option>
+                    {% for value, display in forms.Gender.field.choices %}
+                        <option value="{{ value }}"{% if forms.gender.value == value %} selected{% endif %}>{{ display }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!---is staff------>
+            <div class="box checkbox">
+                <label for="{{ forms.is_staff.id_for_label }}" class="fl fontLabel"> is staff: </label>
+                <input type="checkbox" name="Terms" required>
+            </div>
+
+            <div class="box" style="background: #3c5d5f">
+                <input type="Submit" name="Submit" class="submit" value="SUBMIT">
+            </div>
         </div>
-        </form>
-    </div>
+    </form>
 </body>
+
 
 

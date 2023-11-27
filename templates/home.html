@@ -1,188 +1,22 @@
-{%extends 'base.html'%}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-{% comment %} {% load static %} {% endcomment %}
-<html lang="en">
-
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        {% comment %} <link rel="stylesheet"  type="text/css" href="{% static 'base.css' %}"> {% endcomment %}
-        <title>CSEC ASTU Development Division</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<style>
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f8f9fa;
-    }
-
-    .header {
-        background-color: #343a40;
-        color: #ffffff;
-        padding: 50px 0;
-        text-align: center;
-    }
-
-    .main-content {
-        padding: 50px 0;
-        text-align: center;
-    }
-
-    .card {
-        border: none;
-        border-radius: 15px;
-        transition: transform 0.3s;
-    }
-
-    .card:hover {
-        transform: scale(1.05);
-    }
-
-    .card .abstract-shape {
-        background-color: #007bff;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        margin: 20px auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .section-heading {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 15px;
-        color: #007bff;
-    }
-
-    .footer {
-        background-color: #343a40;
-        color: #ffffff;
-        padding: 20px 0;
-        text-align: center;
-    }
-</style>
-
-</head>
-<body>
 {% block context %}
-
-<div class="header">
-    <h1>Welcome to CSEC ASTU Development Division</h1>
-    <p>Empowering the Future through Innovation</p>
-</div>
-
-<div class="main-content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="abstract-shape">
-                            <i class="fas fa-cogs fa-3x" style="color: #ffffff;"></i>
-                        </div>
-                        <h3 class="section-heading">Innovation</h3>
-                        <p>Explore cutting-edge technologies and creative solutions.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="abstract-shape">
-                            <i class="fas fa-users fa-3x" style="color: #ffffff;"></i>
-                        </div>
-                        <h3 class="section-heading">Collaboration</h3>
-                        <p>Collaborate with passionate individuals and teams.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="abstract-shape">
-                            <i class="fas fa-lightbulb fa-3x" style="color: #ffffff;"></i>
-                        </div>
-                        <h3 class="section-heading">Empowerment</h3>
-                        <p>Empower yourself with skills and knowledge.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{%endblock%}
-</body>
-</html>
-
-
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+{%load static %}
 <head>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSEC ASTU Development Division</title>
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-        }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        .header {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 50px 0;
-            text-align: center;
-        }
 
-        .main-content {
-            padding: 50px 0;
-            text-align: center;
-        }
-
-        .card {
-            border: none;
-            border-radius: 15px;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-        }
-
-        .card .abstract-shape {
-            background-color: #007bff;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .section-heading {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: #007bff;
-        }
-
-        .footer {
-            background-color: #343a40;
-            color: #ffffff;
-            padding: 20px 0;
-            text-align: center;
-        }
-    </style>
 </head>
+
 <body>
 
     <div class="header">
@@ -230,6 +64,181 @@
         </div>
     </div>
 
+    <div class="advertisement">
+        <div class="container advertisement-content">
+            <div class="abstract-design"></div>
+            <h2 class="display-4">Special Announcement!</h2>
+            <p class="lead">Unlock your full potential with our cutting-edge software development courses.</p>
+        </div>
+    </div>
+<!-- 
+    <div class="footer">
+        <p>&copy; 2023 CSEC ASTU Development Division</p>
+    </div> -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+{% endblock %}
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSEC ASTU Development Division</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #132434;
+            color: #ffffff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 36px;
+        }
+
+        .header p {
+            font-size: 18px;
+        }
+
+        .main-content {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card .abstract-shape {
+            background-color: #007bff;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-heading {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+
+        .advertisement {
+            background-color: #132434;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .advertisement-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .abstract-design {
+            background-color: #007bff;
+            height: 100px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #132434;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Welcome to CSEC ASTU Development Division</h1>
+        <p>Empowering the Future through Innovation</p>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="abstract-shape">
+                                <i class="fas fa-cogs fa-3x" style="color: #ffffff;"></i>
+                            </div>
+                            <h3 class="section-heading">Innovation</h3>
+                            <p>Explore cutting-edge technologies and creative solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="abstract-shape">
+                                <i class="fas fa-users fa-3x" style="color: #ffffff;"></i>
+                            </div>
+                            <h3 class="section-heading">Collaboration</h3>
+                            <p>Collaborate with passionate individuals and teams.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="abstract-shape">
+                                <i class="fas fa-lightbulb fa-3x" style="color: #ffffff;"></i>
+                            </div>
+                            <h3 class="section-heading">Empowerment</h3>
+                            <p>Empower yourself with skills and knowledge.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="advertisement">
+        <div class="container advertisement-content">
+            <div class="abstract-design"></div>
+            <h2 class="display-4">Special Announcement!</h2>
+            <p class="lead">Stay tuned for exciting updates and events. We're committed to driving innovation forward!</p>
+        </div>
+    </div>
+
     <div class="footer">
         <p>&copy; 2023 CSEC ASTU Development Division | Follow us on:
             <a href="#" class="fa fa-facebook" style="color: #ffffff;"></a>
@@ -243,7 +252,6 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
+
 </html> -->
