@@ -46,12 +46,18 @@ def Events(request):
 def Read_more(request,pk):
     Events = Event.objects.get(id=pk)
     context = {'Event':Events}
-    return render(request,'Event.html',context)
+    return render(request,'showEvent.html',context)
 
 def delete_Event(request,pk):
     Events = Event.objects.get(id=pk)
     Events.delete()
     messages.success(request,'Event Deleted')
+    return redirect('home')
+
+def delete_user(request,pk):
+    user = CustomUser.objects.get(id=pk)
+    user.delete()
+    messages.success(request,'user Deleted')
     return redirect('home')
 
 
@@ -61,8 +67,10 @@ def update_Event(request,pk):
     if form.is_valid():
         form.save()
         return redirect('home')
-    return render(request,'update_venue.html',{'form':form})
+    return render(request,'update_event.html',{'form':form})
 
+def About(request):
+    return render(request,'about.html')
 
 def logout(request):
     auth_logout(request)
@@ -82,7 +90,7 @@ def AddEvents(request):
     context = {'forms':form}
     return render(request,'add_event.html',context)
 
-def index(request):
+def Dashboard(request):
     users = CustomUser.objects.all()
     return render(request,'index.html',{'users':users})
 
