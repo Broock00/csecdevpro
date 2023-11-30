@@ -9,7 +9,7 @@ admin.site.index_title = 'Admin administration'
 
 @admin.register(CustomUser)
 class CustomUseradmin(admin.ModelAdmin):
-    fields = ('username','User_ID','Phone_number','Department')
+    fields = ('username','User_ID','Phone_number','Department','password')
     list_filter = ('Department',)
     list_display = ('username','User_ID','Phone_number','Department')
     # ordering = ('Today',)
