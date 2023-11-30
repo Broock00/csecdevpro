@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block context %}
+<div class="container d-flex justify-content-center" style="background-color: #132434; color: #ffffff; min-height: 100vh;">
+    <div class="text-center">
+        <h2>Create a New Announcement</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content:</label>
+                <textarea class="form-control" id="content" name="content" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Announcement</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

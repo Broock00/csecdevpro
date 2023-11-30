@@ -18,8 +18,8 @@ class Event(models.Model):
     Location = models.CharField(max_length=100)
     Organizer = models.CharField(blank = True,max_length=100)
     Capacity = models.PositiveIntegerField()
-    DateTime = models.DateTimeField(default=timezone.now)
-    Image = models.ImageField(upload_to = "staticfiles/media/")
+    Today = models.DateTimeField(default=timezone.now)
+    Image = models.ImageField(blank = True,upload_to = "staticfiles/media/")
 
     def __str__(self):
         return self.Event_name
@@ -45,4 +45,10 @@ class CustomUser(AbstractUser):
 
 
 
+class SpecialAnnouncement(models.Model):
+    date_time = models.DateTimeField(default = timezone.now)
+    title = models.CharField(max_length=200)
+    content = models.TextField()
     
+    def __str__(self):
+        return self.title

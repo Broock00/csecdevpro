@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect ,HttpResponseRedirect
-from .forms import SignUpForm, EventsForm
-from .models import Event, CustomUser
+from .forms import SignUpForm, EventsForm, Announcement
+from .models import Event, CustomUser, SpecialAnnouncement
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
@@ -53,7 +53,8 @@ def home(request):
         - Renders the 'home.html' template.
         - Simple view representing the home page.
         """
-        return render(request,'home.html')
+        Announcement = SpecialAnnouncement.objects.all().order_by('-date_time')
+        return render(request,'home.html',{'announcement':Announcement})
 
 
 def Events(request):
@@ -61,7 +62,7 @@ def Events(request):
     - Retrieves all events from the database, ordered by date and time.
     - Renders the 'Event.html' template with the retrieved events.
     """
-    Events = Event.objects.all().order_by('DateTime')
+    Events = Event.objects.all().order_by('Today')
     context = {'Events':Events}
     return render(request,'Event.html',context)
 
@@ -97,7 +98,17 @@ def delete_user(request,pk):
     messages.success(request,'user Deleted')
     return redirect('home')
 
-
+@login_required
+def delete_announcement(request,pk):
+    """
+    - Deletes a specific event from the database based on the provided primary key.
+    - Displays a success message upon successful deletion.
+    - only admin can do this
+    """
+    Announcement = SpecialAnnouncement.objects.get(id=pk)
+    Announcement.delete()
+    messages.success(request,'Announcement Deleted')
+    return redirect('home')
 
 def About(request):
     """ 
@@ -147,4 +158,12 @@ def Dashboard(request):
     return render(request,'index.html',{'users':users})
 
 
+def announcement_form(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        SpecialAnnouncement.objects.create(title=title, content=content)
+        messages.success(request,'Announcement Added.')
+        return redirect('home')
+    return render(request, 'announcement_form.html')
 

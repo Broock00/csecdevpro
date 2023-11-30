@@ -1,5 +1,5 @@
 from django import forms
-from .models import CustomUser, Event
+from .models import CustomUser, Event, SpecialAnnouncement
 
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
@@ -34,7 +34,10 @@ class SignUpForm(UserCreationForm):
             raise ValidationError("Passwords don't match")
         return cleaned_data
 
-
+class Announcement(forms.ModelForm):
+    class Meta:
+        model = SpecialAnnouncement
+        fields = '__all__'
 
 
 class EventsForm(forms.ModelForm):

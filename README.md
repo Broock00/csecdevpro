@@ -1,6 +1,6 @@
 # csecdevpro
 
-# CSEC Development Division - Django Web Application
+# CSEC Development Division - Web Application
 
 This Django web application is designed for the CSEC Development Division. It includes user authentication, event management, and more.
 
